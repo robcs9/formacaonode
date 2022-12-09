@@ -28,24 +28,24 @@ app.get('/clientes', (req, res) => {
 app.get('/clientes/:id', (req, res) =>{
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    return connect.execSQLQuery('select * from cliente where id=' + req.params.id, res);
+    return connect.execSQLQuery('select * from clientes where id=' + req.params.id, res);
 })
 
 app.put('/clientes/:id', (req, res) =>{
     res.setHeader("Access-Control-Allow-Origin","*");
     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-    return connect.execSQLQuery("update cliente set nome='"+req.body.nome+"' where id="+req.params.id, res);
+    return connect.execSQLQuery("update clientes set nome='"+req.body.nome+"' where id="+req.params.id, res);
 })
 app.post('/clientes/', (req, res) =>{
     res.setHeader("Access-Control-Allow-Origin","*");
     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-    return connect.execSQLQuery("insert into cliente (nome) value('"+req.body.nome+"')", res);
+    return connect.execSQLQuery("insert into clientes (nome) value('"+req.body.nome+"')", res);
 })
 
 app.delete('/clientes/:id', (req, res) =>{
     res.setHeader("Access-Control-Allow-Origin","*");
     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-    return connect.execSQLQuery("delete from cliente where id="+req.params.id, res);
+    return connect.execSQLQuery("delete from clientes where id="+req.params.id, res);
 })
 // Port Number
 const PORT = process.env.PORT || 5000;
