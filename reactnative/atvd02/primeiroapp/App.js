@@ -47,4 +47,5 @@ const styles = StyleSheet.create({
     padding: 20
   }
 });
- export default Flex;
+
+export default Flex;
