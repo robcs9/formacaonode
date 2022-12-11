@@ -6,6 +6,7 @@ import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './screens/Home';
 import LoginScreen from './screens/Login';
+import CadastroScreen from './screens/Cadastro';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Cadastro" component={CadastroScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

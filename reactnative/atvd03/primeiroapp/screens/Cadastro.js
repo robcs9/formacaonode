@@ -5,26 +5,19 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button, Input, Avatar } from 'react-native-elements';
 
-
-export default function LoginScreen({ navigation }) {
+// fields: email, senha, salvar (button)
+export default function CadastroScreen({ navigation }) {
     return (
         <View style={[styles.container, {
             flexDirection: "column"
         }]}>
-            <View style={{ flex: 1, alignItems: 'center', paddingTop: 40 }}>
-                <Avatar
-                    size='xlarge'
-                    rounded
-                    source={{
-                        uri:
-                            'https://nagriksevakendra.in/default/login/avatar.png',
-                    }}
-                />
-            </View>
+            <View style={{ flex: 1 }}>
 
+            </View>
+            
             <View style={{ flex: 1 }}>
                 <Input
-                    placeholder='Login'
+                    placeholder='Email'
                 />
                 <Input
                     placeholder='Senha'
@@ -33,10 +26,10 @@ export default function LoginScreen({ navigation }) {
 
             <View style={{ flex: 3 }}>
                 <Button
-                    title="Entrar"
+                    title="Salvar"
                     type="solid"
                 />
-
+                
                 <Button style={{ marginTop: 15 }}
                     title="Home"
                     type='outline'
