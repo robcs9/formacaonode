@@ -7,8 +7,9 @@ import { ListItem, Avatar, Button, Header } from 'react-native-elements';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import FlashMessage, { showMessage } from 'react-native-flash-message';
 
-export default function ListarScreen({route, navigation}) {
+export default function InserirScreen({route, navigation}) {
     
+    /*
     const [getNome, setNome] = useState();
     const [getCpf, setCpf] = useState();
     const [getTel, setTel] = useState();
@@ -30,6 +31,7 @@ export default function ListarScreen({route, navigation}) {
             });
 
     }
+    */
     
     return (
         <View style={{alignItems:'center'}}>
@@ -44,22 +46,22 @@ export default function ListarScreen({route, navigation}) {
             <Text>Digite seu nome</Text>
             <TextInput
                 style={{ height:40, width:300, borderColor: 'gray', borderWidth:1 }}
-                onChangeText={text => setNome(text)}
-                value={getNome}
+                //onChangeText={text => setNome(text)}
+                //value={getNome}
             />
             
             <Text>Digite seu Telefone</Text>
             <TextInput
                 style={{ height:40, width:300, borderColor: 'gray', borderWidth:1 }}
-                onChangeText={text => setTel(text)}
-                value={getTel}
+                //onChangeText={text => setTel(text)}
+                //value={getTel}
             />
 
             <Text>Digite seu CPF</Text>
             <TextInput
                 style={{ height:40, width:300, borderColor: 'gray', borderWidth:1 }}
-                onChangeText={text => setCpf(text)}
-                value={getCpf}
+                //onChangeText={text => setCpf(text)}
+                //value={getCpf}
             />
             <Button
                 buttonStyle={{marginTop:20, width:300}}

@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import axios from 'axios';
-import { ListItem, Avatar, Button, Header } from 'react-native-elements';
+import { ListItem, Avatar, Button, Header, Card, Icon } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useIsFocused } from '@react-navigation/native';
 
 export default function ListarScreen({route, navigation}) {
     
-    const [list, setList] = useState([]);
     const refresh = useIsFocused();
+    /*const [list, setList] = useState([]);
     useEffect(() => {
         function consultarDados() {
             axios.get("http://professornilson.com/testeservico/clientes")
@@ -22,9 +22,33 @@ export default function ListarScreen({route, navigation}) {
         }
         consultarDados();
     }, [refresh]);
-    
+    */
+   
     return (
         <View>
+            <Header
+                centerComponent={{ text: 'Lista de Produtos', style: { color: '#fff' } }}
+                rightComponent={ <Button
+                    title='+'bottomDivider
+                    onPress={() => navigation.navigate('InserirProduto')}
+                />}
+            />
+            <ScrollView>
+                <TouchableOpacity onPress={() => navigation.navigate('Alterar')}>
+                    <Card>
+                        <Card.Title>Poco x3 PRO</Card.Title>
+                        <Card.Divider />
+                        <Card.Image source={require('../images/pic2.jpg')}/>
+                        <Text style={{ marginBottom: 10 }}>
+                            {`\nNome: Poco x3 PRO MSG-7654
+                            \nCapacidade: 256 GB
+                            \nPreço: R$ 1.500,00`}
+                        </Text>
+                    </Card>
+                </TouchableOpacity>
+            </ScrollView>
+        </View>
+        /*<View>
             <Header
                 centerComponent={{ text: 'Listar', style: { color: '#fff' } }}
                 rightComponent={ <Button
@@ -50,6 +74,6 @@ export default function ListarScreen({route, navigation}) {
                 ))
             }
             </ScrollView>
-        </View>
+        </View>*/
     );
 }

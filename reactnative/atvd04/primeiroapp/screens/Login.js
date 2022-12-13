@@ -8,6 +8,7 @@ import { Button, Input, Avatar } from 'react-native-elements';
 
 export default function LoginScreen({ navigation, route }) {
     
+    /*
     const [quantidade, setQuantidade] = useState(0);
     const [nome, setNome] = useState(0);
     
@@ -20,6 +21,7 @@ export default function LoginScreen({ navigation, route }) {
             setNome(nome);
         }
     }, [])
+    */
 
     return (
         <View style={[styles.container, {
@@ -30,8 +32,7 @@ export default function LoginScreen({ navigation, route }) {
                     size='xlarge'
                     rounded
                     source={{
-                        uri:
-                            'https://nagriksevakendra.in/default/login/avatar.png',
+                        uri: 'https://nagriksevakendra.in/default/login/avatar.png',
                     }}
                 />
             </View>
@@ -45,25 +46,18 @@ export default function LoginScreen({ navigation, route }) {
                 />
             </View>
 
-            <View style={{ flex: 3 }}>
-                <Button
+            <View style={{ flex: 3, alignItems: 'center'}}>
+                <Button buttonStyle={{width: 300}}
                     title="Entrar"
-                    type="outline"
+                    type="solid"
+                    onPress={() => navigation.navigate('Listar')}
                 />
-                <Button style={{ marginTop: 15 }}
+                <Button
+                    buttonStyle={{backgroundColor: 'red', width: 300, marginTop: 15, borderColor: 'red'}}
                     title="Cadastre-se"
                     type="outline"
+                    onPress={() => navigation.navigate('Cadastrar')}
                 />
-                <Button style={{ marginTop: 15 }}
-                    title="Home"
-                    onPress={() => navigation.navigate('Home')}
-                />
-                <Text>
-                    { nome }
-                </Text>
-                <Text>
-                    Quantidade enviada: { quantidade }
-                </Text>
             </View>
         </View>
     );

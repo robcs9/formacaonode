@@ -7,66 +7,35 @@ import { ListItem, Avatar, Button, Header } from 'react-native-elements';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import FlashMessage, { showMessage } from 'react-native-flash-message';
 
-export default function AlterarScreen({route, navigation}) {
-    
+export default function InserirProdutoScreen({route, navigation}) {
     /*
     const [getNome, setNome] = useState();
     const [getCpf, setCpf] = useState();
     const [getTel, setTel] = useState();
-    const [getId, setId] = useState();
     
-    useEffect(() => {
-        if(route.params) {
-            const { nome } = route.params;
-            const { cpf } = route.params;
-            const { telefone } = route.params;
-            const { id } = route.params;
-            
-            setNome(nome);
-            setCpf(cpf);
-            setTel(telefone);
-            setId(id);
-        }
-    }, [])
+    async function inserirDados() {
+        await axios.post('http://professornilson.com/testeservico/clientes'
+            , {
+                nome: getNome,
+                telefone: getTel,
+                cpf: getCpf
+            }).then(function (response) {
+                showMessage({
+                    message: 'Registro salvo com sucesso',
+                    type: 'success'
+                })
+            }).catch(function (error) {
+                console.log(error);
 
-    function alterarDados() {
-
-        axios.put('http://professornilson.com/testeservico/clientes/'+getId,{
-        nome: getNome,
-        telefone: getTel,
-        cpf: getCpf
-        }).then(function (response) {
-            showMessage({
-                message: 'Registro alterado com sucesso',
-                type: 'success'
             });
-        }).catch(function (error) {
-            console.log(error);
-    });}
+
+    }*/
     
-    function excluirDados() {
-        axios.delete('http://professornilson.com/testeservico/clientes/'+getId)
-        .then(function (response) {
-            setNome(null);
-            setCpf(null);
-            setTel(null);
-            setId(null);
-            navigation.navigate('Listar');
-            showMessage({
-                message: "Registro excluído com sucesso!",
-                type: 'danger'
-            })
-        }).catch(function (error) {
-            console.log(error);
-
-    });}
-    */
-
     return (
         <View style={{alignItems:'center'}}>
-            <FlashMessage position="top"/>
+            <FlashMessage position="bottom"/>
             <Header
-                centerComponent={{ text: 'Produto', style: { color: '#fff' } }}
+                centerComponent={{ text: 'Cadastro de Produto', style: { color: '#fff' } }}
                 leftComponent={ <Button
                     title='<' bottomDivider
                     onPress={() => navigation.navigate('Listar')}
@@ -95,12 +64,7 @@ export default function AlterarScreen({route, navigation}) {
             <Button
                 buttonStyle={{marginTop:20, width:300}}
                 title='Salvar'
-                //onPress={() => alterarDados()}
-            />
-            <Button
-                buttonStyle={{marginTop:20, width:300, backgroundColor: 'red'}}
-                title='Excluir'
-                //onPress={() => excluirDados()}
+                //onPress={() => inserirDados()}
             />
         </View>
     );
