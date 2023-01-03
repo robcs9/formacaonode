@@ -1,5 +1,3 @@
-/*import { useState } from 'react';
-const [toggle]*/
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Container } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
